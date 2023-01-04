@@ -1,0 +1,17 @@
+CREATE TABLE skateboards (id INTEGER PRIMARY KEY, brand TEXT, quantity INTEGER, size INTEGER, rating INTEGER) ;
+INSERT INTO skateboards VALUES ( 1, "santa_cruz", 10, 7.75, 15);
+INSERT INTO skateboards VALUES ( 2, "santa_cruz", 12, 8.0, 14);
+INSERT INTO skateboards VALUES ( 3, "primitive", 15, 8.0, 11);
+INSERT INTO skateboards VALUES ( 4, "primitive", 13, 8.5, 10);
+INSERT INTO skateboards VALUES ( 5, "primitive", 12, 8.25, 12);
+INSERT INTO skateboards VALUES ( 6, "toy_machine", 15, 8.0, 6);
+INSERT INTO skateboards VALUES( 7, "toy_machine", 11, 8.38, 5);
+INSERT INTO skateboards VALUES ( 8, "anti_hero", 10, 8.0, 3);
+INSERT INTO skateboards VALUES ( 9, "anti_hero", 14, 8.5, 2);
+INSERT INTO skateboards VALUES ( 10, "anti-hero", 12, 8.75, 1);
+INSERT INTO skateboards VALUES ( 11, "krooked", 9, 8.0, 4);
+INSERT INTO skateboards VALUES ( 12, "krooked", 15, 8.25, 7);
+INSERT INTO skateboards VALUES ( 13, "birdhouse", 12, 8.75, 8);
+INSERT INTO skateboards VALUES ( 14, "real", 16, 8.0, 9);
+SELECT * FROM skateboards ORDER BY rating ;
+SELECT size, SUM(quantity) FROM skateboards GROUP BY size;
