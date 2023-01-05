@@ -1,17 +1,43 @@
-CREATE TABLE skateboards (id INTEGER PRIMARY KEY, brand TEXT, quantity INTEGER, size INTEGER, rating INTEGER) ;
-INSERT INTO skateboards VALUES ( 1, "santa_cruz", 10, 7.75, 15);
-INSERT INTO skateboards VALUES ( 2, "santa_cruz", 12, 8.0, 14);
-INSERT INTO skateboards VALUES ( 3, "primitive", 15, 8.0, 11);
-INSERT INTO skateboards VALUES ( 4, "primitive", 13, 8.5, 10);
-INSERT INTO skateboards VALUES ( 5, "primitive", 12, 8.25, 12);
-INSERT INTO skateboards VALUES ( 6, "toy_machine", 15, 8.0, 6);
-INSERT INTO skateboards VALUES( 7, "toy_machine", 11, 8.38, 5);
-INSERT INTO skateboards VALUES ( 8, "anti_hero", 10, 8.0, 3);
-INSERT INTO skateboards VALUES ( 9, "anti_hero", 14, 8.5, 2);
-INSERT INTO skateboards VALUES ( 10, "anti-hero", 12, 8.75, 1);
-INSERT INTO skateboards VALUES ( 11, "krooked", 9, 8.0, 4);
-INSERT INTO skateboards VALUES ( 12, "krooked", 15, 8.25, 7);
-INSERT INTO skateboards VALUES ( 13, "birdhouse", 12, 8.75, 8);
-INSERT INTO skateboards VALUES ( 14, "real", 16, 8.0, 9);
-SELECT * FROM skateboards ORDER BY rating ;
+-Create a skateshop database selling skateboards
+
+CREATE TABLE skateboards (id INTEGER PRIMARY KEY, brand TEXT, quantity INTEGER, size INTEGER, rating INTEGER, price INTEGER) ;
+
+INSERT INTO skateboards VALUES
+( 1, "santa_cruz", 10, 7.75, 15,60);
+INSERT INTO skateboards VALUES 
+( 2, "santa_cruz", 12, 8.0, 14,55);
+INSERT INTO skateboards VALUES 
+( 3, "primitive", 15, 8.0, 11,50);
+INSERT INTO skateboards VALUES 
+( 4, "primitive", 13, 8.5, 10, 60);
+INSERT INTO skateboards VALUES
+( 5, "primitive", 12, 8.25, 12, 45);
+INSERT INTO skateboards VALUES
+( 6, "toy_machine", 15, 8.0, 6, 50);
+INSERT INTO skateboards VALUES 
+( 7, "toy_machine", 11, 8.38, 5, 65);
+INSERT INTO skateboards VALUES
+( 8, "anti_hero", 10, 8.0, 3, 70);
+INSERT INTO skateboards VALUES 
+( 9, "anti_hero", 14, 8.5, 2, 65);
+INSERT INTO skateboards VALUES 
+( 10, "anti-hero", 12, 8.75, 1, 70);
+INSERT INTO skateboards VALUES 
+( 11, "krooked", 9, 8.0, 4, 60);
+INSERT INTO skateboards VALUES
+( 12, "krooked", 15, 8.25, 7, 45);
+INSERT INTO skateboards VALUES 
+( 13, "birdhouse", 12, 8.75, 8, 50);
+INSERT INTO skateboards VALUES 
+( 14, "real", 16, 8.0, 9, 60);
+
+- Display the database ordered by price 
+SELECT brand, rating, price FROM skateboards ORDER BY price asc;
+
+- What are the 5 best skateboards we have?
+SELECT * FROM skateboards ORDER BY rating asc LIMIT 5;
+
+- How many of each size board do we have?
 SELECT size, SUM(quantity) FROM skateboards GROUP BY size;
+
+
