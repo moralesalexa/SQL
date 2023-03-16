@@ -1,0 +1,26 @@
+ In this project, you’re going to make your own table with some small set of “famous people”, 
+ then make more tables about things they do and join those to create nice human readable lists.
+ 
+ CREATE TABLE authors (id INTEGER PRIMARY KEY, name TEXT) ; 
+
+INSERT INTO authors VALUES ( 10, "Ram Dass") ;
+INSERT INTO authors VALUES ( 20, "Sadguru") ;
+INSERT INTO authors VALUES ( 30, "Ocean Vuong") ;
+INSERT INTO authors VALUES ( 40, "David Hawkins") ;
+INSERT INTO authors VALUES ( 50, "Eckhart Tolle") ;
+INSERT INTO authors VALUES ( 60, "Miguel Ruiz") ;
+INSERT INTO authors VALUES ( 70, "Bell Hooks") ;
+INSERT INTO authors VALUES ( 80, "Deepak Chopra") ;
+
+    CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT,        author_id INTEGER ) ; 
+
+INSERT INTO books VALUES ( 1,"Be Here Now", 10) ;
+INSERT INTO books VALUES ( 2, "Inner Engineering", 20) ;
+INSERT INTO books VALUES  ( 3, "On Earth We're Breifly Gorgeous", 30) ;
+INSERT INTO books VALUES ( 4, "Letting Go", 40) ;
+INSERT INTO books VALUES ( 5, "Power Of Now", 50) ;
+INSERT INTO books VALUES ( 6, "The Four Agreements", 60) ;
+INSERT INTO books VALUES ( 7, "All About Love", 70) ;
+INSERT INTO books VALUES ( 8, "You Are The Universe", 80) ;
+
+    SELECT authors.name AS author, books.title FROM authors LEFT OUTER JOIN books ON authors.id=books.author_id; 
