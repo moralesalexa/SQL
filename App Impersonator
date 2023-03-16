@@ -1,0 +1,26 @@
+Think about your favorite apps, and pick one that stores your data- like a game that stores scores, an app that lets you post updates, etc. Now in this project, you're going to imagine that the app stores your data in a SQL database (which is pretty likely!), and write SQL statements that might look like their own SQL.
+
+CREATE a table to store the data.
+INSERT a few example rows in the table.
+Use an UPDATE to emulate what happens when you edit data in the app.
+Use a DELETE to emulate what happens when you delete data in the app.
+
+
+/* What does the app's SQL look like? */
+
+CREATE TABLE tumblr (id INTEGER PRIMARY KEY, username TEXT, notes INTEGER, date TEXT, post TEXT) ; 
+
+INSERT INTO tumblr (id, username, notes, date, post)
+VALUES (1, "mermaid", 55 , "3/3/23", "being a pisces is tough") ;
+INSERT INTO tumblr (id, username, notes, date, post)
+VALUES (2, "mermaid", 100, "3/4/23", "had a sick skate sesh today") ; INSERT INTO tumblr (id, username, notes, date, post)
+VALUES (3, "mermaid", 30, "3/5/23","i love my dog :) ") ;
+INSERT INTO tumblr (id, username, notes, date, post)
+VALUES (4, "mermaid", 70, "3/6/23", "feeling sorrowful") ; 
+
+SELECT * FROM tumblr ;
+
+UPDATE tumblr SET post = "feeling extra sorrowful" WHERE id=4 ;
+SELECT * FROM tumblr ; 
+
+DELETE FROM tumblr WHERE id=4 ;
